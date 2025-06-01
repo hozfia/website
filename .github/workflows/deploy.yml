@@ -21,7 +21,8 @@ jobs:
           password: ${{ secrets.WINDOWS_PASSWORD }}
           port: 22
           script: |
-            git clone https://github.com/hozfia/website.git C:\inetpub\wwwroot
+            cd C:\inetpub\wwwroot
+            git pull https://github.com/hozfia/website.git
 
       - name: Deploy to Windows Host 2
         uses: appleboy/ssh-action@v1.0.0
@@ -31,4 +32,5 @@ jobs:
           password: ${{ secrets.WINDOWS_PASSWORD }}
           port: 22
           script: |
-              git clone https://github.com/hozfia/website.git C:\inetpub\wwwroot
+            cd C:\inetpub\wwwroot
+            git pull https://github.com/hozfia/website.git
